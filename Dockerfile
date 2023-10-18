@@ -12,7 +12,7 @@ ENV SONAR_SCANNER_MSBUILD_VERSION=5.14.0.78575 \
 # Linux update
 RUN apk --no-cache add \
         unzip \
-        openjdk17
+        openjdk17-jre
 
 # Install Sonar Scanner
 RUN wget https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/$SONAR_SCANNER_MSBUILD_VERSION/sonar-scanner-msbuild-$SONAR_SCANNER_MSBUILD_VERSION-$NETAPP_VERSION.zip \
