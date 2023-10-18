@@ -15,7 +15,12 @@ This latest image was built with the following components:
 
 > Tags are written using the following pattern: `dotnet-sonar:<year>.<month>.<revision>`
 
-* `23.10.5`, `latest` [(23.10.5/Dockerfile)](https://github.com/thematrix97/dotnet-sonar/blob/23.10.5/Dockerfile)
+* `23.10.6`, `latest` [(23.10.6/Dockerfile)](https://github.com/thematrix97/dotnet-sonar/blob/23.10.6/Dockerfile)
+  * DotNet 7.0.401
+  * SonarScanner 5.14.0.78575
+  * Base image alpine linux
+
+* `23.10.5` [(23.10.5/Dockerfile)](https://github.com/thematrix97/dotnet-sonar/blob/23.10.5/Dockerfile)
   * DotNet 7.0.401
   * SonarScanner 5.14.0.78575
 
