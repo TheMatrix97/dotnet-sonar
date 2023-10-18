@@ -2,83 +2,22 @@
 
 This is a container used to build dotnet projects and provide SonarQube analysis using SonarQube MSBuild Scanner.
 
-It also allows you to run Docker in Docker using a docker.sock mount.
 
 ----
 
 This latest image was built with the following components:
 
 * dotnetcore-sdk 7.0.401
-* dotnetcore-runtime 7.0.11 (required by Sonar-Scanner)
 * SonarQube MSBuild Scanner 5.14.0.78575
-* Docker binaries 20.10.x (for running Docker in Docker using the docker.sock mount)
 * OpenJDK Java Runtime 17 (required by Sonar-Scanner and some Sonar-Scanner plugins)
-* NodeJS 16 (required by Sonar-Scanner web analysis plugins)
 
 ## Supported tags and respective `Dockerfile` links
 
 > Tags are written using the following pattern: `dotnet-sonar:<year>.<month>.<revision>`
 
-* `23.10.4`, `latest7`, `latest` [(23.10.4/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.10.4/Dockerfile)
+* `23.10.5`, `latest` [(23.10.5/Dockerfile)](https://github.com/thematrix97/dotnet-sonar/blob/23.10.5/Dockerfile)
   * DotNet 7.0.401
   * SonarScanner 5.14.0.78575
-* `23.10.3`, `latest6` [(23.10.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.10.3/Dockerfile)
-  * DotNet 6.0.414
-  * SonarScanner 5.14.0.78575
-> :warning: **[(THIS VERSION HAS REACHED END OF LIFE)](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)**
-* `22.07.1`, `latest5` [(22.07.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.07.1/Dockerfile)
-  * DotNet 5.0.408
-  * SonarScanner 5.7.1.49528
-* `23.09.4` [(23.09.4/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.09.4/Dockerfile)
-* `23.09.3` [(23.09.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.09.3/Dockerfile)
-* `23.08.4` [(23.08.4/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.08.4/Dockerfile)
-* `23.08.3` [(23.08.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.08.3/Dockerfile)
-* `23.06.4` [(23.06.4/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.06.4/Dockerfile)
-* `23.06.3` [(23.06.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.06.3/Dockerfile)
-* `23.02.4` [(23.02.4/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.02.4/Dockerfile)
-* `23.02.3` [(23.02.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/23.02.3/Dockerfile)
-* `22.12.4` [(22.12.4/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.12.4/Dockerfile)
-* `22.12.3` [(22.12.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.12.3/Dockerfile)
-* `22.11.4` [(22.11.4/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.11.4/Dockerfile)
-* `22.11.3` [(22.11.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.11.3/Dockerfile)
-* `22.10.3` [(22.10.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.10.3/Dockerfile)
-* `22.07.3` [(22.07.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.07.3/Dockerfile)
-* `22.07.0`, `latest31` [(22.07.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/22.07.0/Dockerfile)
-  * DotNetCore 3.1.420
-  * SonarScanner 5.7.1.49528
-* `21.11.3` [(21.11.3/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.11.3/Dockerfile)
-* `21.11.1` [(21.11.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.11.1/Dockerfile)
-* `21.11.0` [(21.11.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.11.0/Dockerfile)
-* `21.07.1` [(21.07.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.07.1/Dockerfile)
-* `21.07.0` [(21.07.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.07.0/Dockerfile)
-* `21.06.1` [(21.06.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.06.1/Dockerfile)
-* `21.06.0` [(21.06.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.06.0/Dockerfile)
-* `21.05.1` [(21.05.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.05.1/Dockerfile)
-* `21.05.0` [(21.05.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.05.0/Dockerfile)
-* `21.04.1` [(21.04.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.04.1/Dockerfile)
-* `21.04.0` [(21.04.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.04.0/Dockerfile)
-* `21.01.1` [(21.01.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.01.1/Dockerfile)
-* `21.01.0` [(21.01.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/21.01.0/Dockerfile)
-* `20.12.2` [(20.12.2/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/20.12.2/Dockerfile)
-* `20.12.1` [(20.12.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/20.12.1/Dockerfile)
-* `20.12.0` [(20.12.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/20.12.0/Dockerfile)
-  * DotNetCore 2.2.207
-  * SonarScanner 5.0.4.24009
-* `20.10.1` [(20.10.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/20.10.1/Dockerfile)
-* `20.10.0` [(20.10.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/20.10.0/Dockerfile)
-* `20.07.0` [(20.07.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/20.07.0/Dockerfile)
-* `19.12.0` [(19.12.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/19.12.0/Dockerfile)
-* `19.10.1` [(19.10.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/19.10.1/Dockerfile)
-* `19.09.0` [(19.09-0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/19.09.0/Dockerfile)
-* `19.08.0` [(19.08.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/19.08.0/Dockerfile)
-* `19.01.0` [(19.01.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/19.01.0/Dockerfile)
-* `18.12.1` [(18.12.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/18.12.1/Dockerfile)
-* `18.09.0` [(18.09.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/18.09.0/Dockerfile)
-* `18.07.0` [(18.07.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/18.07.0/Dockerfile)
-* `18.05.0` [(18.05.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/18.05.0/Dockerfile)
-* `18.03.1` [(18.03.1/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/18.03.1/Dockerfile)
-* `18.03.0` [(18.03.0/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/18.03.0/Dockerfile)
-* `2-4.0.2` [(2-4.0.2/Dockerfile)](https://github.com/nosinovacao/dotnet-sonar/blob/2-4.0.2/Dockerfile)
 
 ## Compiling dotnet code with SonarQube Analysis
 
@@ -108,7 +47,7 @@ $ dotnet /sonar-scanner/SonarScanner.MSBuild.dll end  /d:sonar.login="<SonarQube
 
 Simple Usage:
 ```bash
-$ docker run -it --rm -v <my-project-source-path>:/source ghcr.io/nosinovacao/dotnet-sonar:latest bash -c "cd source \
+$ docker run -it --rm -v <my-project-source-path>:/source ghcr.io/thematrix97/dotnet-sonar:latest bash -c "cd source \
     && dotnet /sonar-scanner/SonarScanner.MSBuild.dll begin /k:sonarProjectKey /name:sonarProjectName /version:buildVersion \
     && dotnet restore \
     && dotnet build -c Release \
@@ -172,7 +111,7 @@ node('somenode-with-docker')
 {
     withSonarQubeEnv('my-jenkins-configured-sonar-environment')
     {
-        docker.image('ghcr.io/nosinovacao/dotnet-sonar:latest').inside()
+        docker.image('ghcr.io/thematrix97/dotnet-sonar:latest').inside()
         {
             withEnv(envVariables)
             {
@@ -202,28 +141,6 @@ timeout(time: 1, unit: 'HOURS')
     }
 }
 ```
-
-**If you want to use Docker in Docker**:
-
-Please note that if you want to use Docker inside Docker (DinD) you need to perform additional actions when mounting the docker image in the pipeline.
-
-**The following actions will expose your host to several security vulnerabilities** and therefore this should only be used when you absolutely must to:
-
-```groovy
-docker.image('ghcr.io/nosinovacao/dotnet-sonar:latest').inside("--group-add docker -v /var/run/docker.sock:/var/run/docker.sock")
-{
-    // Some stuff
-    docker.image.('hello-world:latest').inside()
-    {
-        sh "echo 'hello from docker inside docker'"
-    }
-}
-```
-
-The above code will:
-
-* Add current jenkins user to the Docker group
-* Mount the docker socket into the container so that you can control the Docker instance on the host machine
 
 ## Code Coverage
 
